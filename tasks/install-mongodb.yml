@@ -1,0 +1,18 @@
+---
+- name: "add repo.mongodb.org repository GPG key"
+  apt_key:
+    keyserver: "{{ unifi_repo_key_server }}"
+    id: "{{ unifi_mongodb_repo_key_id }}"
+    state: "{{ unifi_install_state }}"
+
+- name: "configure repo.mongodb.org apt repository"
+  apt_repository:
+    filename: "{{ unifi_mongodb_repo_name }}"
+    repo: "{{ unifi_mongodb_repo_url }}"
+    state: "{{ unifi_install_state }}"
+
+- name: "install mongodb packages"
+  apt:
+    name: "{{ unifi_mongodb_packages }}"
+    state: "{{ unifi_install_state }}"
+    update_cache: yes

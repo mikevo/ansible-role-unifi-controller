@@ -1,0 +1,20 @@
+---
+- name: install ubnt apt key
+  apt_key:
+    keyserver: "{{ unifi_repo_key_server }}"
+    id: "{{ unifi_repo_key_id }}"
+    state: "{{ unifi_install_state }}"
+
+- name: install ubnt apt repository
+  apt_repository:
+    filename: "{{ unifi_repo_name }}"
+    repo: "{{ unifi_repo_url }}"
+    state: "{{ unifi_install_state }}"
+
+- name: install unifi-controller packages
+  apt:
+    name: "{{ unifi_packages }}"
+    state: "{{ unifi_install_state }}"
+    update_cache: yes
+  notify:
+    - restart unifi

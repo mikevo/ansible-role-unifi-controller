@@ -1,0 +1,26 @@
+---
+unifi_config_file: /etc/default/unifi
+unifi_install_state: present
+unifi_java_home: /usr/lib/jvm/java-8-openjdk-amd64
+unifi_java_packages: openjdk-11-jre-headless
+unifi_java_snappy_checksum: sha256:61f7bc4076be0320ab4ef076fb6d83e3f649c3caf9ffb6031654a73f9c23732f
+unifi_java_snappy_file: /usr/lib/unifi/lib/snappy-java-1.0.5.jar
+unifi_java_snappy_url: https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.2.6/snappy-java-1.1.2.6.jar
+unifi_mongodb_packages: mongodb-org
+unifi_mongodb_repo_key_id: 58712A2291FA4AD5
+unifi_mongodb_repo_name: mongodb-36
+unifi_mongodb_repo_url: "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/3.6 main"
+unifi_package_dependencies:
+  - apt-transport-https
+  - gnupg
+  - python3-apt
+unifi_packages:
+  - unifi
+unifi_repo_key_id: 06E85760C0A52C50
+unifi_repo_key_server: keyserver.ubuntu.com
+unifi_repo_name: ubiquiti
+unifi_repo_url: "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti"
+unifi_services:
+  - unifi
+unifi_services_state: started
+unifi_services_enabled: yes
